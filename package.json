@@ -1,0 +1,19 @@
+{
+  "name": "api_conectando_firebase",
+  "version": "1.0.0",
+  "description": "Criar Rest-API com node; conectar a um BD online.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "firebase": "^12.1.0",
+    "firebase-admin": "^13.4.0",
+    "fs": "^0.0.1-security"
+  }
+}
