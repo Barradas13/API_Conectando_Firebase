@@ -1,6 +1,6 @@
 // controllers/pessoaController.js
 
-import admin from "firebase-admin";;
+import {admin} from "../config/firebaseAdmin.js";
 
 // se já inicializou no seu index.js, não precisa inicializar de novo aqui
 // admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
@@ -12,17 +12,18 @@ const pessoaRef = db.collection("Pessoa");
 export const getAll = async (req, res) => {
   try {
     const snapshot = await pessoaRef.get();
-
-    pessoas = []
+    let pessoas = [];
 
     for (const doc of snapshot.docs) {
         const data = doc.data(); // pega os campos salvos no Firestore
+
         pessoas.push({
           id: doc.id,   // ID do documento
-          nome: data.nome,
-          cpf: data.cpf,
-          idade: data.idade
+          nome: data.Nome,
+          cpf: data.CPF,
+          idade: data.Idade
         });
+        
     }
 
     res.status(200).json(pessoas);
