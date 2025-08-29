@@ -21,7 +21,9 @@ export const getAll = async (req, res) => {
           id: doc.id,   // ID do documento
           nome: data.Nome,
           cpf: data.CPF,
-          idade: data.Idade
+          idade: data.Idade,
+          telefone: data.Telefone,
+          email: data.Email
         });
         
     }
