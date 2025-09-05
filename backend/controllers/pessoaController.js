@@ -18,15 +18,17 @@ export const getAll = async (req, res) => {
         const data = doc.data(); // pega os campos salvos no Firestore
 
         pessoas.push({
-          id: doc.id,   // ID do documento
-          nome: data.Nome,
-          cpf: data.CPF,
-          idade: data.Idade,
-          telefone: data.Telefone,
-          email: data.Email
+          Id: doc.id,   // ID do documento
+          Nome: data.Nome,
+          CPF: data.CPF,
+          Idade: data.Idade,
+          Telefone: data.Telefone,
+          Email: data.Email
         });
         
     }
+
+    console.log(pessoas);
 
     res.status(200).json(pessoas);
   } catch (error) {
